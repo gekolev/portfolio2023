@@ -87,6 +87,12 @@
         padding: 10px 20px;
         font-size: 12px;
       }
+      .special{
+        font-style:italic;
+        font-family: 'Times New Roman', Times, serif;
+        text-decoration: underline;
+        cursor: pointer;
+      }
       a {
         text-decoration: underline;
         color: limegreen;
@@ -119,9 +125,9 @@
   <body style="position: relative">
     <div id="threejs-canvas" class="screen"></div>
     <div class="text-holder">
-      <div id="animation-red-square">
+      <div>
         <h1 class="text">
-          Introducing George, a multi-talented professional with experise in
+          Introducing George, a <span id="animation-red-square" class="special">multi-talented professional</span> with experise in
           front-end development and project management.
         </h1>
         <p class="text">
@@ -523,6 +529,18 @@
       animation_blue_square.addEventListener("mouseover", function () {
         // console.log("mouse on blue square");
         newAction = action_4;
+        switchAction();
+      });
+
+      animation_blue_square.addEventListener("mouseleave", function () {
+        // console.log("mouse on blue square");
+        newAction = action_1;
+        switchAction();
+      });
+
+       animation_red_square.addEventListener("mouseleave", function () {
+        // console.log("mouse on red square");
+        newAction = action_1;
         switchAction();
       });
 
